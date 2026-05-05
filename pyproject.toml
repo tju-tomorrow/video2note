@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-extract2note"
+version = "0.1.0"
+description = "Local CLI for transcribing video audio into text. Supports Douyin & Bilibili."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+  {name = "tju-tomorrow", email = "chenkaixuan94@outlook.com"},
+]
+keywords = ["video", "transcription", "whisper", "douyin", "bilibili", "speech-to-text"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+  "Topic :: Multimedia :: Video",
+]
+requires-python = ">=3.11"
+dependencies = [
+  "yt-dlp>=2025.1.15",
+  "faster-whisper>=1.1.0",
+  "playwright>=1.56.0",
+  "opencc-python-reimplemented>=0.1.7",
+  "openai>=2.0.0",
+  "python-dotenv>=1.0.0",
+  "mcp>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/tju-tomorrow/video2note"
+Repository = "https://github.com/tju-tomorrow/video2note"
+Issues = "https://github.com/tju-tomorrow/video2note/issues"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+
+[project.scripts]
+video-extract2note = "video_extract2note.cli:main"
+video-extract2note-mcp = "video_extract2note.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

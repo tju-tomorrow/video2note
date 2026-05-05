@@ -1,0 +1,30 @@
+.worktrees/
+.worktrees
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+.DS_Store
+tmp/
+desktop/node_modules/
+desktop/dist/
+web/node_modules/
+web/dist/
+.env
+*.bin
+
+# Playwright MCP artifacts
+.playwright-mcp/
+page-*.yml
+
+# Miscellaneous
+image.png
+version_req.md
+.claude/settings.local.json
+
+enhance_project/
+docs/
+*.bin
